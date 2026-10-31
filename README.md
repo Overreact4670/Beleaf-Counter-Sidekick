@@ -34,6 +34,6 @@ CSV imports work offline. Excel workbook imports load the SheetJS 0.20.3 browser
 
 ## Project
 
-**Current app version:** 6.27.0
+**Current app version:** 6.27.1
 
 This is a lightweight, client-side HTML app built for Beleaf counter workflows. The app's data processing and interface run in the browser, with no project server required.
