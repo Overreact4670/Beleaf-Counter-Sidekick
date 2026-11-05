@@ -2,6 +2,8 @@
 
 Beleaf Counter Sidekick is a browser-based helper for cannabis retail counter and floor workflows. It turns Dutchie export files into a searchable product workspace for product discovery, side-by-side comparisons, inventory checks, and shift follow-up.
 
+**Current app:** [Beleaf Counter Sidekick 6.46.0](Beleaf_Counter_Sidekick_6_46_0.html)
+
 ## What it does
 
 - **Find products quickly:** Search product names, brands, flavors, categories, and preferences. Narrow results by category, budget, potency, terpenes, and other available details.
@@ -19,7 +21,7 @@ The saved workspace is stored in the browser profile for the site address where 
 
 ## Getting started
 
-1. Open the Beleaf Counter Sidekick HTML app in a modern browser.
+1. Open [Beleaf Counter Sidekick 6.46.0](Beleaf_Counter_Sidekick_6_46_0.html) in a modern browser.
 2. Choose **Update from Dutchie** and select the export files you want to import. An Inventory export is needed to populate product and stock results; Catalog, Lab, and Discounts files add supporting details when available.
 3. Review the import preview, source dates, row counts, and warnings, then apply the update.
 4. Use **Counter mode** for product discovery, **Floor operations** for stock and shift work, and **Backup & restore** to save or move the workspace.
@@ -34,6 +36,6 @@ CSV imports work offline. Excel workbook imports load the SheetJS 0.20.3 browser
 
 ## Project
 
-**Current app version:** 6.27.1
+**Current app version:** 6.46.0
 
 This is a lightweight, client-side HTML app built for Beleaf counter workflows. The app's data processing and interface run in the browser, with no project server required.
