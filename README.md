@@ -2,7 +2,8 @@
 
 Beleaf Counter Sidekick is a browser-based helper for cannabis retail counter and floor workflows. It turns Dutchie export files into a searchable product workspace for product discovery, side-by-side comparisons, inventory checks, and shift follow-up.
 
-**Current app:** [Beleaf Counter Sidekick 6.46.0](Beleaf_Counter_Sidekick_6_46_0.html)
+**Current app:** [Beleaf Counter Sidekick 6.46.0](Beleaf_Counter_Sidekick_6_46_0.html)  
+**GitHub Pages:** [Open the site](https://overreact4670.github.io/Beleaf-Counter-Sidekick/)
 
 ## What it does
 
@@ -33,6 +34,10 @@ CSV imports work offline. Excel workbook imports load the SheetJS 0.20.3 browser
 - Search and consultation results organize the imported information; they do not establish medical effects or replace staff judgment.
 - Terpene and cannabinoid details depend on the source data and package match. Listing values and lab measurements are labeled separately where available.
 - Discount eligibility and expiration dates should be checked against the current Dutchie records.
+
+## GitHub Pages
+
+The repository root contains an `index.html` entry point that opens the current app. To publish it, set the repository's Pages source to **Deploy from a branch**, choose **main** and **/(root)** under **Settings → Pages**, and save. GitHub Pages will then serve the site at the link above.
 
 ## Project
 
