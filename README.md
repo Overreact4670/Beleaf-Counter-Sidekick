@@ -1,43 +1,44 @@
-# Beleaf Counter Sidekick
+# Beleaf Counter Sidekick 6.60
 
-Beleaf Counter Sidekick is a browser-based helper for cannabis retail counter and floor workflows. It turns Dutchie export files into a searchable product workspace for product discovery, side-by-side comparisons, inventory checks, and shift follow-up.
+Beleaf Counter Sidekick is a browser-based companion for Dutchie counter and floor workflows. It converts locally selected Dutchie exports into a searchable workspace for product discovery, customer consultations, comparisons, and inventory follow-up.
 
-**GitHub Pages:** [Open the site](https://overreact4670.github.io/Beleaf-Counter-Sidekick/)
+**GitHub Pages:** [Open Beleaf Counter Sidekick](https://overreact4670.github.io/Beleaf-Counter-Sidekick/)
 
-## What it does
+## Main areas
 
-- **Find products quickly:** Search product names, brands, flavors, categories, and preferences. Narrow results by category, budget, potency, terpenes, and other available details.
-- **Support customer conversations:** Use consultation filters and saved staff picks to explore options. Compare up to three products, and switch to Customer view to hide staff-only details such as stock, vendor, and SKU.
-- **Review product information:** See package-specific details when available, including price, quantity, expiration, listed potency, cannabinoids, and lab-reported terpene profiles.
-- **Keep floor work visible:** Review products nearing expiration, low stock, price differences, discounts, and import matching details. Use shift tasks to track follow-ups.
-- **Refresh from exports:** Import Dutchie Inventory, Catalog, Lab, and Discounts data from CSV or Excel files. Review the import summary and warnings before applying an update.
-- **Back up the workspace:** Export and restore a JSON backup, and undo the most recent import or restore.
+- **Product Search:** Search products by name, brand, strain, flavor, category, SKU/UPC, or plain-language terms. Narrow results by category, price, potency, cannabinoid, terpene, and other available details.
+- **Consultation:** Apply customer-request filters, review recommendation evidence, compare products, and use the temporary basket to organize quantities. The basket is session-only and is not saved in the workspace.
+- **Highlights:** Review imported promotions, staff picks, and eligible expiry-markdown suggestions. Suggestions are review aids; Sidekick does not change prices or apply discounts in Dutchie.
+- **Operations:** Review inventory and import diagnostics, stock and price flags, package status, and expiration dates.
 
-## Data and privacy
+## Importing Dutchie exports
 
-The app works from files you import. It does not connect to Dutchie or fetch live inventory. Product and inventory data can become outdated, so confirm current availability and selling prices in Dutchie before checkout.
+Use **Update from Dutchie** or the first-run file chooser. An Inventory export is required to populate product and stock results. Catalog, Lab results, and Discounts exports add supporting detail. Supported file types are CSV, XLS, and XLSX. The importer recognizes Inventory, Catalog, Lab, and Discounts files; it does not import a separate Batches export.
 
-The saved workspace is stored in the browser profile for the site address where the app is opened. It is not automatically shared across browsers or computers. Use **Backup & restore** to move the workspace. The project starts with an empty workspace unless that browser already has a saved import; current inventory is not bundled into the app.
+Review the import preview, source dates, row counts, and warnings before applying the update. Imports are transactional: when a required validation step fails, the current workspace is left unchanged. Package-level inventory and COA details remain separate; the app does not average lab measurements across packages.
 
-## Getting started
+For XLS/XLSX imports, Sidekick first checks for a local `xlsx.full.min.js` file beside the HTML, then tries the official SheetJS 0.20.3 CDN. To use Excel offline, save the official SheetJS 0.20.3 browser reader beside the HTML. CSV imports do not require the Excel reader or an internet connection. Excel imports are limited to 25 MB per file.
 
-1. Open Beleaf Counter Sidekick in a modern browser.
-2. Choose **Update from Dutchie** and select the export files you want to import. An Inventory export is needed to populate product and stock results; Catalog, Lab, and Discounts files add supporting details when available.
-3. Review the import preview, source dates, row counts, and warnings, then apply the update.
-4. Use **Counter mode** for product discovery, **Floor operations** for stock and shift work, and **Backup & restore** to save or move the workspace.
+## Workspace storage and backups
 
-CSV imports work offline. Excel workbook imports load the SheetJS 0.20.3 browser reader from the official SheetJS CDN; if it cannot be reached, export the report as CSV and import that instead. Excel imports are limited to 25 MB per file.
+The primary workspace is stored in IndexedDB in the browser profile and site origin where the app is opened. A localStorage compatibility path is used when IndexedDB is unavailable. The workspace is not automatically shared between browsers, computers, profiles, or site addresses.
 
-## Notes
+Use **Backup & restore** to export a JSON backup, move the workspace to another browser, restore a prior backup, or undo the latest successful import or restore. Keep a backup before clearing browser data or changing devices. A tab that detects a newer save from another open Sidekick tab becomes read-only until it is reloaded, avoiding silent overwrites from stale tabs.
 
-- Search and consultation results organize the imported information; they do not establish medical effects or replace staff judgment.
-- Terpene and cannabinoid details depend on the source data and package match. Listing values and lab measurements are labeled separately where available.
-- Discount eligibility and expiration dates should be checked against the current Dutchie records.
+Customer View can be entered from the header. It remains active across reloads in the same tab session. Hold the Customer View control for 1.5 seconds to return to staff view.
+
+## Important limitations
+
+- Sidekick processes only the files selected by staff. It does not connect to Dutchie or retrieve live inventory, prices, package status, or discount eligibility.
+- Inventory freshness and sellable quantity depend on the imported source. Verify current package availability, restrictions, and selling prices in Dutchie before quoting or checkout.
+- A missing or unknown value is not treated as zero or as confirmed eligibility.
+- Cannabinoid and terpene measurements depend on source availability and package matching. Inventory and lab-reported values are labeled separately where available.
+- Recommendations organize available records; they do not predict medical effects or replace staff judgment.
 
 ## GitHub Pages
 
-The repository root contains an `index.html` entry point that opens the current app. To publish it, set the repository's Pages source to **Deploy from a branch**, choose **main** and **/(root)** under **Settings → Pages**, and save. GitHub Pages will then serve the site at the link above.
+The repository includes an `index.html` entry point for the current app. To publish the site, configure repository Pages to **Deploy from a branch**, select **main** and **/(root)** under **Settings → Pages**, and save.
 
 ## Project
 
-This is a lightweight, client-side HTML app built for Beleaf counter workflows. The app's data processing and interface run in the browser, with no project server required.
+This is a client-side HTML application. Product data processing and the interface run in the browser; no project server is required.
